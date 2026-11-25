@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Shilpa &amp; Vineeth | Seeking your blessings</title>
+<meta property="og:title" content="Shilpa &amp; Vineeth | Seeking your blessings">
+<meta property="og:description" content="Light a lamp with us. We are getting married and would love your blessings.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;1,9..144,300;1,9..144,500&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0E2419;--cream:#F6EBD3;--gold:#F2A93B;--soft:#B9D0B4;--glow:rgba(242,169,59,.0)}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth;scroll-snap-type:y proximity}
+body{margin:0;background:var(--bg);color:var(--cream);font-family:'DM Sans',system-ui,sans-serif;overflow-x:hidden}
+canvas{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:1}
+section{min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:calc(36px + env(safe-area-inset-top,0px)) 26px calc(36px + env(safe-area-inset-bottom,0px));position:relative;scroll-snap-align:start;z-index:2;overflow:hidden}
+section:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 40%,rgba(242,169,59,var(--g,.0)),transparent 62%);transition:--g 1s;pointer-events:none}
+body.lit .s1:before{--g:.28;background:radial-gradient(circle at 50% 42%,rgba(242,169,59,.32),transparent 62%)}
+.s2:before{background:radial-gradient(circle at 50% 0%,rgba(242,169,59,.16),transparent 60%)!important}
+.s3:before{background:radial-gradient(circle at 50% 100%,rgba(242,169,59,.2),transparent 62%)!important}
+body:not(.lit) .s2,body:not(.lit) .s3{display:none}
+.eyebrow{font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin:0 0 14px}
+.serif{font-family:'Fraunces',Georgia,serif}
+h1,h2{font-family:'Fraunces',Georgia,serif;font-weight:300;margin:0;line-height:1.05}
+h1{font-size:clamp(2.6rem,13vw,4.6rem)}
+h1 em,h2 em{font-style:italic;color:var(--gold);font-weight:500}
+p{line-height:1.7;margin:0}
+.lamp{width:min(66vw,260px);cursor:pointer;filter:drop-shadow(0 0 0 transparent);transition:filter 1.2s}
+body.lit .lamp{filter:drop-shadow(0 0 28px rgba(242,169,59,.55))}
+.fl{opacity:0;transform-box:fill-box;transform-origin:50% 100%;transition:opacity .8s}
+body.lit .fl{opacity:1;animation:fk 1.3s ease-in-out infinite}
+@keyframes fk{0%,100%{transform:scale(1,1) rotate(-1.5deg)}50%{transform:scale(.88,1.12) rotate(2deg)}}
+.hint{margin-top:22px;font-family:'Fraunces',serif;font-style:italic;font-size:1.2rem;color:var(--soft);transition:opacity .6s}
+.hint.pulse{animation:pu 2.4s ease-in-out infinite}
+@keyframes pu{50%{opacity:.45}}
+.down{margin-top:26px;opacity:0;font-size:12px;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);transition:opacity 1s 1.2s}
+body.lit .down{opacity:1;animation:bob 2s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(6px)}}
+.rv{opacity:0;transform:translateY(24px);transition:opacity 1s,transform 1s}
+.in .rv{opacity:1;transform:none}
+.in .rv:nth-child(2){transition-delay:.15s}.in .rv:nth-child(3){transition-delay:.3s}.in .rv:nth-child(4){transition-delay:.45s}.in .rv:nth-child(5){transition-delay:.6s}
+.date{display:inline-flex;align-items:baseline;gap:12px;margin:26px 0 6px;border-top:1px solid rgba(242,169,59,.5);border-bottom:1px solid rgba(242,169,59,.5);padding:12px 22px}
+.date b{font-family:'Fraunces',serif;font-weight:300;font-size:3rem;line-height:1;color:var(--gold)}
+.date span{font-size:12px;letter-spacing:.25em;text-transform:uppercase;text-align:left;line-height:1.6}
+.days{font-family:'Fraunces',serif;font-style:italic;color:var(--soft);font-size:1.05rem}
+.btn{margin-top:26px;padding:15px 28px;border-radius:999px;border:1px solid var(--gold);background:var(--gold);color:#2b1a02;font:500 13px 'DM Sans',sans-serif;letter-spacing:.14em;text-transform:uppercase;cursor:pointer}
+.btn.ghost{background:transparent;color:var(--gold);margin-top:12px}
+.thanks{min-height:3.2em;margin-top:16px;font-family:'Fraunces',serif;font-style:italic;font-size:1.25rem;color:var(--cream)}
+.names{margin-top:30px;font-size:12px;letter-spacing:.22em;text-transform:uppercase;line-height:2;color:var(--soft)}
+.names b{color:var(--cream);font-weight:500}
+.pet{position:fixed;top:-30px;z-index:5;pointer-events:none;animation:fall 3.4s linear forwards}
+@keyframes fall{to{transform:translateY(112vh) rotate(420deg);opacity:.3}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition-duration:.01ms!important}}
+</style>
+</head>
+<body>
+<canvas id="fx"></canvas>
+
+<section class="s1" id="s1">
+  <p class="eyebrow">Before our news</p>
+  <svg class="lamp" id="lamp" viewBox="0 0 200 270" role="button" aria-label="Light the lamp">
+    <defs>
+      <linearGradient id="br" x1="0" x2="1"><stop offset="0" stop-color="#8A5A12"/><stop offset=".45" stop-color="#F0C25C"/><stop offset="1" stop-color="#7A4C0C"/></linearGradient>
+      <radialGradient id="fg" cx=".5" cy=".75" r=".6"><stop offset="0" stop-color="#FFF3B0"/><stop offset=".5" stop-color="#FFB02E"/><stop offset="1" stop-color="#E5611A"/></radialGradient>
+    </defs>
+    <ellipse cx="100" cy="252" rx="62" ry="10" fill="url(#br)"/>
+    <path d="M52,252 Q56,228 100,226 Q144,228 148,252Z" fill="url(#br)"/>
+    <rect x="93" y="150" width="14" height="78" rx="5" fill="url(#br)"/>
+    <ellipse cx="100" cy="196" rx="19" ry="6" fill="url(#br)"/>
+    <ellipse cx="100" cy="166" rx="14" ry="5" fill="url(#br)"/>
+    <path d="M26,112 Q30,152 100,156 Q170,152 174,112Z" fill="url(#br)"/>
+    <ellipse cx="100" cy="112" rx="74" ry="9" fill="#C98F2C"/>
+    <ellipse cx="100" cy="112" rx="66" ry="6" fill="#5A3608"/>
+    <g>
+      <g transform="translate(42,110)"><path class="fl" style="animation-delay:-0.3s" d="M0,0 C-8,-12 -5,-26 0,-40 C5,-26 8,-12 0,0Z" fill="url(#fg)"/></g>
+      <g transform="translate(71,110)"><path class="fl" style="animation-delay:-0.6s" d="M0,0 C-8,-12 -5,-28 0,-44 C5,-28 8,-12 0,0Z" fill="url(#fg)"/></g>
+      <g transform="translate(100,110)"><path class="fl" style="animation-delay:-0.0s" d="M0,0 C-9,-14 -6,-32 0,-52 C6,-32 9,-14 0,0Z" fill="url(#fg)"/></g>
+      <g transform="translate(129,110)"><path class="fl" style="animation-delay:-0.3s" d="M0,0 C-8,-12 -5,-28 0,-44 C5,-28 8,-12 0,0Z" fill="url(#fg)"/></g>
+      <g transform="translate(158,110)"><path class="fl" style="animation-delay:-0.6s" d="M0,0 C-8,-12 -5,-26 0,-40 C5,-26 8,-12 0,0Z" fill="url(#fg)"/></g>
+    </g>
+  </svg>
+  <p class="hint pulse" id="hint">Tap the lamp to light it</p>
+  <p class="down">Scroll ↓</p>
+</section>
+
+<section class="s2" id="s2">
+  <p class="eyebrow rv">With the grace of God</p>
+  <h1 class="rv">We’re<br><em>getting</em><br>married</h1>
+  <div class="date rv"><b>13</b><span>January<br>2027</span></div>
+  <p class="days rv" id="days"></p>
+</section>
+
+<section class="s3" id="s3">
+  <p class="eyebrow rv">One small ask</p>
+  <h2 class="rv" style="font-size:clamp(2rem,9vw,3.2rem)">Please keep us in<br>your <em>blessings</em></h2>
+  <p class="rv serif" style="margin-top:18px;max-width:300px;color:var(--soft);font-style:italic">Your good wishes and prayers mean the most to us as we begin this new chapter.</p>
+  <div class="rv"><button class="btn" id="bless" type="button">Send our thanks ♥</button>
+  <p class="thanks" id="thanks"></p></div>
+  <button class="btn ghost rv" id="share" type="button">Share this note</button>
+  <p class="names rv">With love and gratitude<br><b>Shilpa &amp; Vineeth</b><br>and our families<br><b>Hari G</b><br>Sheeja Raj T<br>Sanjay Vishwakarma HS</p>
+</section>
+
+<script>
+const $=id=>document.getElementById(id);
+
+// Falling flowers
+function petals(n,ch){const set=ch||['🌼','🌸','🏵️','✨'];for(let i=0;i<n;i++){const p=document.createElement('div');p.className='pet';p.textContent=set[Math.floor(Math.random()*set.length)];
+ p.style.cssText='left:'+Math.random()*100+'vw;font-size:'+(14+Math.random()*16)+'px;animation-delay:'+Math.random()*1.2+'s;animation-duration:'+(3+Math.random()*2)+'s';
+ document.body.appendChild(p);setTimeout(()=>p.remove(),6200)}}
+
+// Sparks near the lit lamp
+const cv=$('fx'),cx=cv.getContext('2d');let sp=[],lit=false;
+function rs(){cv.width=innerWidth;cv.height=innerHeight}addEventListener('resize',rs);rs();
+(function loop(){cx.clearRect(0,0,cv.width,cv.height);
+ if(lit&&Math.random()<.35)sp.push({x:Math.random()*cv.width,y:cv.height+6,v:Math.random()*.6+.25,r:Math.random()*1.8+.8,p:Math.random()*6});
+ sp=sp.filter(s=>s.y>-10);
+ for(const s of sp){s.y-=s.v;s.p+=.04;s.x+=Math.sin(s.p)*.4;cx.globalAlpha=.25+Math.abs(Math.sin(s.p))*.6;cx.fillStyle='#F2A93B';cx.shadowBlur=10;cx.shadowColor='#F2A93B';cx.beginPath();cx.arc(s.x,s.y,s.r,0,7);cx.fill()}
+ requestAnimationFrame(loop)})();
+
+// Light the lamp
+$('lamp').addEventListener('click',()=>{
+ if(lit){petals(18);return}
+ lit=true;document.body.classList.add('lit');
+ const h=$('hint');h.classList.remove('pulse');h.textContent='Thank you for lighting it with us';
+ petals(20);
+ setTimeout(()=>$('s2').scrollIntoView({behavior:'smooth'}),2600)});
+
+// Reveal on scroll
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:.35});
+['s2','s3'].forEach(i=>io.observe($(i)));
+
+// Days to go (midnight IST on 13 Jan 2027)
+const t=Date.UTC(2027,0,12,18,30);
+function dd(){const d=Math.ceil((t-Date.now())/864e5);$('days').textContent=d>1?d+' days to go':d===1?'Tomorrow!':'Today is the day ♥'}
+dd();setInterval(dd,60000);
+
+// Thanks + share
+const M=['Thank you! Your blessings mean the world to us. ♥','We’re so grateful to have you in our lives.','With your blessings, we begin our new chapter. ♥'];let mi=0;
+$('bless').addEventListener('click',()=>{$('thanks').textContent=M[mi++%3];petals(34)});
+$('share').addEventListener('click',async()=>{
+ const url=location.href,text='Shilpa & Vineeth are getting married on 13 January 2027 and would love to have your blessings. ♥';
+ try{if(navigator.share){await navigator.share({title:'Shilpa & Vineeth | Seeking your blessings',text,url});return}}catch(e){if(e.name==='AbortError')return}
+ window.open('https://wa.me/?text='+encodeURIComponent(text+' '+url),'_blank')});
+</script>
+</body>
+</html>
